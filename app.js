@@ -1,8 +1,18 @@
-const express=require('express');
-const app=express();
-app.get('/',function(req,res){
-    res.send('it works')
-})
+// Import Express module
+const express = require('express');
 
-app.listen(process.env.PORT || 5000);
-module.exports=app;
+// Initialize an Express application
+const app = express();
+
+// Define the port the server will listen to
+const port = 3000;
+
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Start the server and make it listen on the specified port
+app.listen(port, () => {
+    console.log(`Server running at http://127.0.0.1:${port}/`);
+});
